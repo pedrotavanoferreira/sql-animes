@@ -13,3 +13,15 @@ INSERT INTO animes (ID, NAME, CREATOR) VALUES (3, 'Jujutsu Kaisen', 'Gege Akutam
 SELECT * 
   FROM animes
   WHERE ID = 3;
+
+SELECT * 
+  FROM animes
+  WHERE name = 'Naruto';
+
+SELECT * 
+  FROM animes
+  WHERE creator = 'Gege Akutami';
+
+SELECT * 
+  FROM animes
+  WHERE name LIKE 'O%';
