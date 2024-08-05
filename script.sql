@@ -25,3 +25,14 @@ SELECT *
 SELECT * 
   FROM animes
   WHERE name LIKE 'O%';
+
+UPDATE
+  animes
+SET
+  CREATOR = 'Pedro'
+WHERE
+  ID = 1;
+
+DELETE
+  FROM animes
+  WHERE ID = 1;
