@@ -9,6 +9,7 @@ CREATE TABLE animes
 INSERT INTO animes (ID, NAME, CREATOR) VALUES (1, 'Naruto', 'Masashi Kishimoto'); 
 INSERT INTO animes (ID, NAME, CREATOR) VALUES (2, 'One Piece', 'Eiichiro Oda'); 
 INSERT INTO animes (ID, NAME, CREATOR) VALUES (3, 'Jujutsu Kaisen', 'Gege Akutami'); 
+INSERT INTO animes (ID, NAME, CREATOR) VALUES (4, 'Dragon Ball', 'Akira Toriyama'); 
 
 SELECT * 
   FROM animes
@@ -36,3 +37,10 @@ WHERE
 DELETE
   FROM animes
   WHERE ID = 1;
+
+UPDATE
+  animes
+SET
+  NAME = 'Pedro'
+WHERE
+  ID = 4;
