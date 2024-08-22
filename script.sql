@@ -1,22 +1,31 @@
 CREATE TABLE animes 
 ( 
     ID         INT PRIMARY KEY, 
-    NAME VARCHAR2(200 BYTE), 
-    CREATOR  VARCHAR2(200 BYTE) 
+    NAME VARCHAR(200), 
+    CREATOR  VARCHAR(200) 
 ); 
 
+ALTER TABLE animes
+DROP COLUMN CREATOR;
 
-INSERT INTO animes (ID, NAME, CREATOR) VALUES (1, 'Naruto', 'Masashi Kishimoto'); 
-INSERT INTO animes (ID, NAME, CREATOR) VALUES (2, 'One Piece', 'Eiichiro Oda'); 
-INSERT INTO animes (ID, NAME, CREATOR) VALUES (3, 'Jujutsu Kaisen', 'Gege Akutami'); 
-INSERT INTO animes (ID, NAME, CREATOR) VALUES (4, 'Dragon Ball', 'Akira Toriyama'); 
+ALTER TABLE animes 
+ADD creator_id INT;
+
+-- INSERT INTO animes (ID, NAME, CREATOR) VALUES (1, 'Naruto', 'Masashi Kishimoto'); 
+-- INSERT INTO animes (ID, NAME, CREATOR) VALUES (2, 'One Piece', 'Eiichiro Oda'); 
+-- INSERT INTO animes (ID, NAME, CREATOR) VALUES (3, 'Jujutsu Kaisen', 'Gege Akutami'); 
+-- INSERT INTO animes (ID, NAME, CREATOR) VALUES (4, 'Dragon Ball', 'Akira Toriyama'); 
+INSERT INTO animes (ID, NAME, CREATOR_ID) VALUES (2, 'One Piece', 2);
 
 CREATE TABLE creators
 (
     ID       INT PRIMARY KEY,
-    NAME VARCHAR2(200 BYTE),
-    COUNTRY VARCHAR2(200 BYTE)
+    NAME VARCHAR(200),
+    COUNTRY VARCHAR(200)
 );
+
+ALTER TABLE animes ADD CONSTRAINT id_fk_creator
+FOREIGN KEY(creator_id) REFERENCES creators (id);
 
 INSERT INTO creators (ID, NAME, COUNTRY) VALUES (1, 'Masashi Kishimoto', 'JP');
 INSERT INTO creators (ID, NAME, COUNTRY) VALUES (2, 'Eiichiro Oda', 'JP');
