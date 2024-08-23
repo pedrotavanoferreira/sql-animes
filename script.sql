@@ -67,3 +67,12 @@ SET
   NAME = 'Pedro'
 WHERE
   ID = 4;
+
+SELECT *
+  FROM animes
+  INNER JOIN creators
+  ON animes.CREATOR_ID = creators.ID;
+
+DELETE
+  FROM creators
+  WHERE ID = 2;
