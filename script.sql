@@ -11,6 +11,10 @@ DROP COLUMN CREATOR;
 ALTER TABLE animes 
 ADD creator_id INT;
 
+ALTER TABLE animes
+ ADD CONSTRAINT fk_creator_id 
+ FOREIGN KEY (creator_id) REFERENCES creators(id);
+
 -- INSERT INTO animes (ID, NAME, CREATOR) VALUES (1, 'Naruto', 'Masashi Kishimoto'); 
 -- INSERT INTO animes (ID, NAME, CREATOR) VALUES (2, 'One Piece', 'Eiichiro Oda'); 
 -- INSERT INTO animes (ID, NAME, CREATOR) VALUES (3, 'Jujutsu Kaisen', 'Gege Akutami'); 
@@ -76,3 +80,7 @@ SELECT *
 DELETE
   FROM creators
   WHERE ID = 2;
+
+DELETE
+  FROM creators
+  WHERE ID = 1;
